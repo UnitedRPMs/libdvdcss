@@ -1,6 +1,6 @@
 Summary: A portable abstraction library for DVD decryption
 Name: libdvdcss
-Version: 1.4.1
+Version: 1.4.2
 Release: 2%{?dist}
 License: GPLv2
 Group: System Environment/Libraries
@@ -44,7 +44,7 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 %defattr(-,root,root,-)
 %doc AUTHORS COPYING NEWS README ChangeLog
 %{_libdir}/libdvdcss.so.*
-# %{_docdir}/libdvdcss/ChangeLog
+# {_docdir}/libdvdcss/ChangeLog
 
 %files devel
 %defattr(-,root,root,-)
@@ -53,6 +53,9 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 %{_libdir}/pkgconfig/libdvdcss.pc
 
 %changelog
+
+* Fri Mar 23 2018 David Vasquez <davidva at tutanota dot com> 1.4.2-2
+- Updated to 1.4.2
 
 * Tue Jan 09 2018 David Vasquez <davidva at tutanota dot com> 1.4.1-2
 - Updated to 1.4.1 
