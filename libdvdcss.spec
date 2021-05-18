@@ -1,10 +1,10 @@
 Summary: A portable abstraction library for DVD decryption
 Name: libdvdcss
-Version: 1.4.2
-Release: 2%{?dist}
+Version: 1.4.3
+Release: 7%{?dist}
 License: GPLv2
 Group: System Environment/Libraries
-Source: http://download.videolan.org/pub/videolan/libdvdcss/%{version}/libdvdcss-%{version}.tar.bz2
+Source: https://download.videolan.org/pub/libdvdcss/%{version}/libdvdcss-%{version}.tar.bz2
 URL: http://www.videolan.org/libdvdcss/
 BuildRequires: gcc-c++
 Provides: dvdcss-libs = %{version}-%{release}
@@ -28,11 +28,10 @@ VideoLAN client and the Xine navigation plugin.
 
 %build
 %configure --disable-dependency-tracking --disable-static
-make %{?_smp_mflags}
+%make_build
 
 %install
-rm -rf %{buildroot}
-make install DESTDIR=%{buildroot}
+%make_install
 
 find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 
@@ -53,6 +52,9 @@ find $RPM_BUILD_ROOT -name '*.la' -exec rm -f {} ';'
 %{_libdir}/pkgconfig/libdvdcss.pc
 
 %changelog
+
+* Mon May 17 2021 David Va <davidva at tuta dot io> 1.4.2-7
+- Updated to 1.4.3
 
 * Fri Mar 23 2018 David Vasquez <davidva at tutanota dot com> 1.4.2-2
 - Updated to 1.4.2
